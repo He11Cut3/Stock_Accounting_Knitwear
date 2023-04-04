@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище KnitwearsModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Knitwears_Main">
+    <Key>
+      <PropertyRef Name="Knitwears_Main_id" />
+    </Key>
+    <Property Name="Knitwears_Main_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Knitwears_Stock_id" Type="int" />
+    <Property Name="Knitwears_Plan_id" Type="int" />
+    <Property Name="Knitwears_Order_id" Type="int" />
+    <Property Name="Knitwears_Recipe_id" Type="int" />
+    <Property Name="Knitwears_Product_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Knitwears_Order">
+    <Key>
+      <PropertyRef Name="Knitwears_Order_id" />
+    </Key>
+    <Property Name="Knitwears_Order_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Knitwears_Order_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Order_Vendor_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Order_Weight" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Order_Number_Boxes" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Order_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Order_Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Knitwears_Plan_Day">
+    <Key>
+      <PropertyRef Name="Knitwears_Plan_Day_id" />
+    </Key>
+    <Property Name="Knitwears_Plan_Day_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Knitwears_Plan_Day_Nomenclature" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Plan_Day_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Plan_Day_Volume" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Plan_Day_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Plan_Day_Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Knitwears_Plan_Main">
+    <Key>
+      <PropertyRef Name="Knitwears_Plan_id" />
+    </Key>
+    <Property Name="Knitwears_Plan_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Knitwears_Plan_Day_id" Type="int" />
+    <Property Name="Knitwears_Plan_Week_id" Type="int" />
+    <Property Name="Knitwears_Plan_Month_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Knitwears_Plan_Month">
+    <Key>
+      <PropertyRef Name="Knitwears_Plan_Month_id" />
+    </Key>
+    <Property Name="Knitwears_Plan_Month_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Knitwears_Plan_Month_Nomenclature" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Plan_Month_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Plan_Month_Volume" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Plan_Month_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Plan_Month_Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Knitwears_Plan_Week">
+    <Key>
+      <PropertyRef Name="Knitwears_Plan_Week_id" />
+    </Key>
+    <Property Name="Knitwears_Plan_Week_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Knitwears_Plan_Week_Nomenclature" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Plan_Week_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Plan_Week_Volume" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Plan_Week_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Plan_Week_Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Knitwears_Product">
+    <Key>
+      <PropertyRef Name="Knitwears_Product_id" />
+    </Key>
+    <Property Name="Knitwears_Product_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Knitwears_Product_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Product_Weight" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Product_Sample" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Product_Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Product_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Product_Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Knitwears_Recipe">
+    <Key>
+      <PropertyRef Name="Knitwears_Recipe_id" />
+    </Key>
+    <Property Name="Knitwears_Recipe_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Knitwears_Recipe_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Recipe_Ingredients_One" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Recipe_Ingredients_Two" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Recipe_Ingredients_Three" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Recipe_Ingredients_Four" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Knitwears_Stock">
+    <Key>
+      <PropertyRef Name="Knitwears_Stock_id" />
+    </Key>
+    <Property Name="Knitwears_Stock_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Knitwears_Stock_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Stock_Feature" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Stock_Weight" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Stock_Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Stock_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_Stock_Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Knitwears_User">
+    <Key>
+      <PropertyRef Name="Knitwears_User_id" />
+    </Key>
+    <Property Name="Knitwears_User_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Knitwears_User_Login" Type="nvarchar" MaxLength="50" />
+    <Property Name="Knitwears_User_Password" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Knitwears_Main_Knitwears_Order">
+    <End Role="Knitwears_Order" Type="Self.Knitwears_Order" Multiplicity="0..1" />
+    <End Role="Knitwears_Main" Type="Self.Knitwears_Main" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Knitwears_Order">
+        <PropertyRef Name="Knitwears_Order_id" />
+      </Principal>
+      <Dependent Role="Knitwears_Main">
+        <PropertyRef Name="Knitwears_Order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Knitwears_Main_Knitwears_Plan_Main">
+    <End Role="Knitwears_Plan_Main" Type="Self.Knitwears_Plan_Main" Multiplicity="0..1" />
+    <End Role="Knitwears_Main" Type="Self.Knitwears_Main" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Knitwears_Plan_Main">
+        <PropertyRef Name="Knitwears_Plan_id" />
+      </Principal>
+      <Dependent Role="Knitwears_Main">
+        <PropertyRef Name="Knitwears_Plan_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Knitwears_Main_Knitwears_Product">
+    <End Role="Knitwears_Product" Type="Self.Knitwears_Product" Multiplicity="0..1" />
+    <End Role="Knitwears_Main" Type="Self.Knitwears_Main" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Knitwears_Product">
+        <PropertyRef Name="Knitwears_Product_id" />
+      </Principal>
+      <Dependent Role="Knitwears_Main">
+        <PropertyRef Name="Knitwears_Product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Knitwears_Main_Knitwears_Recipe">
+    <End Role="Knitwears_Recipe" Type="Self.Knitwears_Recipe" Multiplicity="0..1" />
+    <End Role="Knitwears_Main" Type="Self.Knitwears_Main" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Knitwears_Recipe">
+        <PropertyRef Name="Knitwears_Recipe_id" />
+      </Principal>
+      <Dependent Role="Knitwears_Main">
+        <PropertyRef Name="Knitwears_Recipe_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Knitwears_Main_Knitwears_Stock">
+    <End Role="Knitwears_Stock" Type="Self.Knitwears_Stock" Multiplicity="0..1" />
+    <End Role="Knitwears_Main" Type="Self.Knitwears_Main" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Knitwears_Stock">
+        <PropertyRef Name="Knitwears_Stock_id" />
+      </Principal>
+      <Dependent Role="Knitwears_Main">
+        <PropertyRef Name="Knitwears_Stock_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Knitwears_Plan_Main_Knitwears_Plan_Day">
+    <End Role="Knitwears_Plan_Day" Type="Self.Knitwears_Plan_Day" Multiplicity="0..1" />
+    <End Role="Knitwears_Plan_Main" Type="Self.Knitwears_Plan_Main" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Knitwears_Plan_Day">
+        <PropertyRef Name="Knitwears_Plan_Day_id" />
+      </Principal>
+      <Dependent Role="Knitwears_Plan_Main">
+        <PropertyRef Name="Knitwears_Plan_Day_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Knitwears_Plan_Main_Knitwears_Plan_Month">
+    <End Role="Knitwears_Plan_Month" Type="Self.Knitwears_Plan_Month" Multiplicity="0..1" />
+    <End Role="Knitwears_Plan_Main" Type="Self.Knitwears_Plan_Main" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Knitwears_Plan_Month">
+        <PropertyRef Name="Knitwears_Plan_Month_id" />
+      </Principal>
+      <Dependent Role="Knitwears_Plan_Main">
+        <PropertyRef Name="Knitwears_Plan_Month_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Knitwears_Plan_Main_Knitwears_Plan_Week">
+    <End Role="Knitwears_Plan_Week" Type="Self.Knitwears_Plan_Week" Multiplicity="0..1" />
+    <End Role="Knitwears_Plan_Main" Type="Self.Knitwears_Plan_Main" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Knitwears_Plan_Week">
+        <PropertyRef Name="Knitwears_Plan_Week_id" />
+      </Principal>
+      <Dependent Role="Knitwears_Plan_Main">
+        <PropertyRef Name="Knitwears_Plan_Week_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="Хранилище KnitwearsModelContainer">
+    <EntitySet Name="Knitwears_Main" EntityType="Self.Knitwears_Main" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Knitwears_Order" EntityType="Self.Knitwears_Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Knitwears_Plan_Day" EntityType="Self.Knitwears_Plan_Day" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Knitwears_Plan_Main" EntityType="Self.Knitwears_Plan_Main" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Knitwears_Plan_Month" EntityType="Self.Knitwears_Plan_Month" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Knitwears_Plan_Week" EntityType="Self.Knitwears_Plan_Week" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Knitwears_Product" EntityType="Self.Knitwears_Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Knitwears_Recipe" EntityType="Self.Knitwears_Recipe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Knitwears_Stock" EntityType="Self.Knitwears_Stock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Knitwears_User" EntityType="Self.Knitwears_User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Knitwears_Main_Knitwears_Order" Association="Self.FK_Knitwears_Main_Knitwears_Order">
+      <End Role="Knitwears_Order" EntitySet="Knitwears_Order" />
+      <End Role="Knitwears_Main" EntitySet="Knitwears_Main" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Knitwears_Main_Knitwears_Plan_Main" Association="Self.FK_Knitwears_Main_Knitwears_Plan_Main">
+      <End Role="Knitwears_Plan_Main" EntitySet="Knitwears_Plan_Main" />
+      <End Role="Knitwears_Main" EntitySet="Knitwears_Main" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Knitwears_Main_Knitwears_Product" Association="Self.FK_Knitwears_Main_Knitwears_Product">
+      <End Role="Knitwears_Product" EntitySet="Knitwears_Product" />
+      <End Role="Knitwears_Main" EntitySet="Knitwears_Main" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Knitwears_Main_Knitwears_Recipe" Association="Self.FK_Knitwears_Main_Knitwears_Recipe">
+      <End Role="Knitwears_Recipe" EntitySet="Knitwears_Recipe" />
+      <End Role="Knitwears_Main" EntitySet="Knitwears_Main" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Knitwears_Main_Knitwears_Stock" Association="Self.FK_Knitwears_Main_Knitwears_Stock">
+      <End Role="Knitwears_Stock" EntitySet="Knitwears_Stock" />
+      <End Role="Knitwears_Main" EntitySet="Knitwears_Main" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Knitwears_Plan_Main_Knitwears_Plan_Day" Association="Self.FK_Knitwears_Plan_Main_Knitwears_Plan_Day">
+      <End Role="Knitwears_Plan_Day" EntitySet="Knitwears_Plan_Day" />
+      <End Role="Knitwears_Plan_Main" EntitySet="Knitwears_Plan_Main" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Knitwears_Plan_Main_Knitwears_Plan_Month" Association="Self.FK_Knitwears_Plan_Main_Knitwears_Plan_Month">
+      <End Role="Knitwears_Plan_Month" EntitySet="Knitwears_Plan_Month" />
+      <End Role="Knitwears_Plan_Main" EntitySet="Knitwears_Plan_Main" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Knitwears_Plan_Main_Knitwears_Plan_Week" Association="Self.FK_Knitwears_Plan_Main_Knitwears_Plan_Week">
+      <End Role="Knitwears_Plan_Week" EntitySet="Knitwears_Plan_Week" />
+      <End Role="Knitwears_Plan_Main" EntitySet="Knitwears_Plan_Main" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

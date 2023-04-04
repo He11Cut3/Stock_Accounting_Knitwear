@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище KnitwearsModelContainer" CdmEntityContainer="KnitwearsEntities">
+    <EntitySetMapping Name="Knitwears_Main">
+      <EntityTypeMapping TypeName="KnitwearsModel.Knitwears_Main">
+        <MappingFragment StoreEntitySet="Knitwears_Main">
+          <ScalarProperty Name="Knitwears_Main_id" ColumnName="Knitwears_Main_id" />
+          <ScalarProperty Name="Knitwears_Stock_id" ColumnName="Knitwears_Stock_id" />
+          <ScalarProperty Name="Knitwears_Plan_id" ColumnName="Knitwears_Plan_id" />
+          <ScalarProperty Name="Knitwears_Order_id" ColumnName="Knitwears_Order_id" />
+          <ScalarProperty Name="Knitwears_Recipe_id" ColumnName="Knitwears_Recipe_id" />
+          <ScalarProperty Name="Knitwears_Product_id" ColumnName="Knitwears_Product_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Knitwears_Order">
+      <EntityTypeMapping TypeName="KnitwearsModel.Knitwears_Order">
+        <MappingFragment StoreEntitySet="Knitwears_Order">
+          <ScalarProperty Name="Knitwears_Order_id" ColumnName="Knitwears_Order_id" />
+          <ScalarProperty Name="Knitwears_Order_Name" ColumnName="Knitwears_Order_Name" />
+          <ScalarProperty Name="Knitwears_Order_Vendor_Code" ColumnName="Knitwears_Order_Vendor_Code" />
+          <ScalarProperty Name="Knitwears_Order_Weight" ColumnName="Knitwears_Order_Weight" />
+          <ScalarProperty Name="Knitwears_Order_Number_Boxes" ColumnName="Knitwears_Order_Number_Boxes" />
+          <ScalarProperty Name="Knitwears_Order_Date" ColumnName="Knitwears_Order_Date" />
+          <ScalarProperty Name="Knitwears_Order_Status" ColumnName="Knitwears_Order_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Knitwears_Plan_Day">
+      <EntityTypeMapping TypeName="KnitwearsModel.Knitwears_Plan_Day">
+        <MappingFragment StoreEntitySet="Knitwears_Plan_Day">
+          <ScalarProperty Name="Knitwears_Plan_Day_id" ColumnName="Knitwears_Plan_Day_id" />
+          <ScalarProperty Name="Knitwears_Plan_Day_Nomenclature" ColumnName="Knitwears_Plan_Day_Nomenclature" />
+          <ScalarProperty Name="Knitwears_Plan_Day_Date" ColumnName="Knitwears_Plan_Day_Date" />
+          <ScalarProperty Name="Knitwears_Plan_Day_Volume" ColumnName="Knitwears_Plan_Day_Volume" />
+          <ScalarProperty Name="Knitwears_Plan_Day_Note" ColumnName="Knitwears_Plan_Day_Note" />
+          <ScalarProperty Name="Knitwears_Plan_Day_Status" ColumnName="Knitwears_Plan_Day_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Knitwears_Plan_Main">
+      <EntityTypeMapping TypeName="KnitwearsModel.Knitwears_Plan_Main">
+        <MappingFragment StoreEntitySet="Knitwears_Plan_Main">
+          <ScalarProperty Name="Knitwears_Plan_id" ColumnName="Knitwears_Plan_id" />
+          <ScalarProperty Name="Knitwears_Plan_Day_id" ColumnName="Knitwears_Plan_Day_id" />
+          <ScalarProperty Name="Knitwears_Plan_Week_id" ColumnName="Knitwears_Plan_Week_id" />
+          <ScalarProperty Name="Knitwears_Plan_Month_id" ColumnName="Knitwears_Plan_Month_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Knitwears_Plan_Month">
+      <EntityTypeMapping TypeName="KnitwearsModel.Knitwears_Plan_Month">
+        <MappingFragment StoreEntitySet="Knitwears_Plan_Month">
+          <ScalarProperty Name="Knitwears_Plan_Month_id" ColumnName="Knitwears_Plan_Month_id" />
+          <ScalarProperty Name="Knitwears_Plan_Month_Nomenclature" ColumnName="Knitwears_Plan_Month_Nomenclature" />
+          <ScalarProperty Name="Knitwears_Plan_Month_Date" ColumnName="Knitwears_Plan_Month_Date" />
+          <ScalarProperty Name="Knitwears_Plan_Month_Volume" ColumnName="Knitwears_Plan_Month_Volume" />
+          <ScalarProperty Name="Knitwears_Plan_Month_Note" ColumnName="Knitwears_Plan_Month_Note" />
+          <ScalarProperty Name="Knitwears_Plan_Month_Status" ColumnName="Knitwears_Plan_Month_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Knitwears_Plan_Week">
+      <EntityTypeMapping TypeName="KnitwearsModel.Knitwears_Plan_Week">
+        <MappingFragment StoreEntitySet="Knitwears_Plan_Week">
+          <ScalarProperty Name="Knitwears_Plan_Week_id" ColumnName="Knitwears_Plan_Week_id" />
+          <ScalarProperty Name="Knitwears_Plan_Week_Nomenclature" ColumnName="Knitwears_Plan_Week_Nomenclature" />
+          <ScalarProperty Name="Knitwears_Plan_Week_Date" ColumnName="Knitwears_Plan_Week_Date" />
+          <ScalarProperty Name="Knitwears_Plan_Week_Volume" ColumnName="Knitwears_Plan_Week_Volume" />
+          <ScalarProperty Name="Knitwears_Plan_Week_Note" ColumnName="Knitwears_Plan_Week_Note" />
+          <ScalarProperty Name="Knitwears_Plan_Week_Status" ColumnName="Knitwears_Plan_Week_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Knitwears_Product">
+      <EntityTypeMapping TypeName="KnitwearsModel.Knitwears_Product">
+        <MappingFragment StoreEntitySet="Knitwears_Product">
+          <ScalarProperty Name="Knitwears_Product_id" ColumnName="Knitwears_Product_id" />
+          <ScalarProperty Name="Knitwears_Product_Name" ColumnName="Knitwears_Product_Name" />
+          <ScalarProperty Name="Knitwears_Product_Weight" ColumnName="Knitwears_Product_Weight" />
+          <ScalarProperty Name="Knitwears_Product_Sample" ColumnName="Knitwears_Product_Sample" />
+          <ScalarProperty Name="Knitwears_Product_Description" ColumnName="Knitwears_Product_Description" />
+          <ScalarProperty Name="Knitwears_Product_Date" ColumnName="Knitwears_Product_Date" />
+          <ScalarProperty Name="Knitwears_Product_Status" ColumnName="Knitwears_Product_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Knitwears_Recipe">
+      <EntityTypeMapping TypeName="KnitwearsModel.Knitwears_Recipe">
+        <MappingFragment StoreEntitySet="Knitwears_Recipe">
+          <ScalarProperty Name="Knitwears_Recipe_id" ColumnName="Knitwears_Recipe_id" />
+          <ScalarProperty Name="Knitwears_Recipe_Name" ColumnName="Knitwears_Recipe_Name" />
+          <ScalarProperty Name="Knitwears_Recipe_Ingredients_One" ColumnName="Knitwears_Recipe_Ingredients_One" />
+          <ScalarProperty Name="Knitwears_Recipe_Ingredients_Two" ColumnName="Knitwears_Recipe_Ingredients_Two" />
+          <ScalarProperty Name="Knitwears_Recipe_Ingredients_Three" ColumnName="Knitwears_Recipe_Ingredients_Three" />
+          <ScalarProperty Name="Knitwears_Recipe_Ingredients_Four" ColumnName="Knitwears_Recipe_Ingredients_Four" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Knitwears_Stock">
+      <EntityTypeMapping TypeName="KnitwearsModel.Knitwears_Stock">
+        <MappingFragment StoreEntitySet="Knitwears_Stock">
+          <ScalarProperty Name="Knitwears_Stock_id" ColumnName="Knitwears_Stock_id" />
+          <ScalarProperty Name="Knitwears_Stock_Name" ColumnName="Knitwears_Stock_Name" />
+          <ScalarProperty Name="Knitwears_Stock_Feature" ColumnName="Knitwears_Stock_Feature" />
+          <ScalarProperty Name="Knitwears_Stock_Weight" ColumnName="Knitwears_Stock_Weight" />
+          <ScalarProperty Name="Knitwears_Stock_Description" ColumnName="Knitwears_Stock_Description" />
+          <ScalarProperty Name="Knitwears_Stock_Date" ColumnName="Knitwears_Stock_Date" />
+          <ScalarProperty Name="Knitwears_Stock_Status" ColumnName="Knitwears_Stock_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Knitwears_User">
+      <EntityTypeMapping TypeName="KnitwearsModel.Knitwears_User">
+        <MappingFragment StoreEntitySet="Knitwears_User">
+          <ScalarProperty Name="Knitwears_User_id" ColumnName="Knitwears_User_id" />
+          <ScalarProperty Name="Knitwears_User_Login" ColumnName="Knitwears_User_Login" />
+          <ScalarProperty Name="Knitwears_User_Password" ColumnName="Knitwears_User_Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="KnitwearsModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище KnitwearsModel.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище KnitwearsModel.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище KnitwearsModel.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище KnitwearsModel.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KnitwearsModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище KnitwearsModel.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KnitwearsModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище KnitwearsModel.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище KnitwearsModel.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>
