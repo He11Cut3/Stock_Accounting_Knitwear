@@ -23,15 +23,17 @@ namespace Knitwear.Edit
         private KnitwearsEntities _context;
         private UC_Plan _Plan;
         private Knitwears_Plan_Day _plan;
-        public Edit_Del_Day(KnitwearsEntities analytic_DbEntities1, object o, UC_Plan uC_Plan)
+        private UC_Plan_General _General;
+        public Edit_Del_Day(KnitwearsEntities analytic_DbEntities1, object o, UC_Plan uC_Plan, UC_Plan_General uC_Plan_)
         {
             InitializeComponent();
             _context = analytic_DbEntities1;
             _plan = (o as Button).DataContext as Knitwears_Plan_Day;
             _Plan = uC_Plan;
-            DDay_Nomenclature.Text = _plan.Knitwears_Plan_Day_Nomenclature;
-            DDay_Note.Text = _plan.Knitwears_Plan_Day_Note;
-            DDay_Volume.Text = _plan.Knitwears_Plan_Day_Volume;
+            _General = uC_Plan_;
+            Nomen.Text = _plan.Knitwears_Plan_Day_Nomenclature;
+            Note.Text = _plan.Knitwears_Plan_Day_Note;
+            myComboBox1.Text = _plan.Knitwears_Plan_Day_Volume;
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -48,7 +50,14 @@ namespace Knitwear.Edit
         {
             _plan.Knitwears_Plan_Day_Status = "Задача выполнена ✓";
             _context.SaveChanges();
-            _Plan.Update_and_Check();
+            if (_Plan != null)
+            {
+                _Plan.Update_and_Check();
+            }
+            if (_General != null)
+            {
+                _General.Update_and_Check_Gen_Day();
+            }
             this.Close();
         }
 
@@ -56,11 +65,18 @@ namespace Knitwear.Edit
         {
             if ((MessageBox.Show("Вы уверены, что хотите изменить информацию?", "Изменение", MessageBoxButton.YesNo, MessageBoxImage.Warning)) == MessageBoxResult.Yes)
             {
-                _plan.Knitwears_Plan_Day_Nomenclature = DDay_Nomenclature.Text;
-                _plan.Knitwears_Plan_Day_Note = DDay_Note.Text;
-                _plan.Knitwears_Plan_Day_Volume = DDay_Volume.Text;
+                _plan.Knitwears_Plan_Day_Nomenclature = Nomen.Text;
+                _plan.Knitwears_Plan_Day_Note = Note.Text;
+                _plan.Knitwears_Plan_Day_Volume = (myComboBox1.SelectedItem as ComboBoxItem)?.Content?.ToString();
                 _context.SaveChanges();
-                _Plan.Update_and_Check();
+                if (_Plan != null)
+                {
+                    _Plan.Update_and_Check();
+                }
+                if (_General != null)
+                {
+                    _General.Update_and_Check_Gen_Day();
+                }
                 this.Close();
             }
         }
@@ -71,7 +87,14 @@ namespace Knitwear.Edit
             {
                 _context.Knitwears_Plan_Day.Remove(_plan);
                 _context.SaveChanges();
-                _Plan.Update_and_Check();
+                if (_Plan != null)
+                {
+                    _Plan.Update_and_Check();
+                }
+                if (_General != null)
+                {
+                    _General.Update_and_Check_Gen_Day();
+                }
                 this.Close();
             }
         }

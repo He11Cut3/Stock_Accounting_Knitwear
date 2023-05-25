@@ -27,10 +27,23 @@ namespace Knitwear.User_Control
         KnitwearsEntities _context = new KnitwearsEntities();
         List<Knitwears_Plan_Day> _list = new List<Knitwears_Plan_Day>();
         private Knitwears_Plan_Day _plan;
+        private UC_Plan_General _general;
         public UC_Plan()
         {
             InitializeComponent();
             Update_and_Check();
+        }
+
+        private void Finder_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string searchText = Finder.Text;
+            var query1 = from emp in _context.Knitwears_Plan_Day
+                         where emp.Knitwears_Plan_Day_Note.Contains(searchText)
+                             || emp.Knitwears_Plan_Day_Nomenclature.Contains(searchText)
+                             || emp.Knitwears_Plan_Day_Status.Contains(searchText)
+                             || emp.Knitwears_Plan_Day_Date.Contains(searchText)
+                         select emp;
+            LV_Plan_Day_.ItemsSource = query1.ToList();
         }
 
         public void Update_and_Check()
@@ -51,19 +64,13 @@ namespace Knitwear.User_Control
 
         }
 
+        
 
-
-        // Добавление
-        private void New_Plan_Click(object sender, RoutedEventArgs e)
-        {
-            New_Plan_Day new_Plan_Day = new New_Plan_Day(_context, this);
-            new_Plan_Day.ShowDialog();
-        }
 
         //Изменить/удалить // Изменить
         private void Edit_del_Click(object sender, RoutedEventArgs e)
         {
-            Edit_Del_Day edit_Del_Day = new Edit_Del_Day(_context, sender, this);
+            Edit_Del_Day edit_Del_Day = new Edit_Del_Day(_context, sender, this, _general);
             edit_Del_Day.ShowDialog();
         }
 

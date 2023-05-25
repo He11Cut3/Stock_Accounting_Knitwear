@@ -26,11 +26,25 @@ namespace Knitwear.User_Control
     {
         KnitwearsEntities _context = new KnitwearsEntities();
         List<Knitwears_Plan_Month> _list = new List<Knitwears_Plan_Month>();
+        private UC_Plan_General plan_General;
 
         public UC_Plan_Month()
         {
             InitializeComponent();
             Update_and_Check_Month();
+        }
+
+        private void Finder_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string searchText = Finder.Text;
+            var query3 = from emp in _context.Knitwears_Plan_Month
+                         where emp.Knitwears_Plan_Month_Note.Contains(searchText)
+                             || emp.Knitwears_Plan_Month_Nomenclature.Contains(searchText)
+                             || emp.Knitwears_Plan_Month_Status.Contains(searchText)
+                             || emp.Knitwears_Plan_Month_Date.Contains(searchText)
+                         select emp;
+
+            LV_Plan_Week_.ItemsSource = query3.ToList();
         }
 
         public void Update_and_Check_Month()
@@ -51,15 +65,9 @@ namespace Knitwear.User_Control
 
         }
 
-        private void New_Plan_Month_Click(object sender, RoutedEventArgs e)
-        {
-            New_Month new_Plan_Month = new New_Month(_context, this);
-            new_Plan_Month.ShowDialog();
-        }
-
         private void Edit_Del_Month_Click(object sender, RoutedEventArgs e)
         {
-            Edit_Del_Month edit_Del_Month = new Edit_Del_Month(_context, sender, this);
+            Edit_Del_Month edit_Del_Month = new Edit_Del_Month(_context, sender, this, plan_General);
             edit_Del_Month.ShowDialog();
         }
 

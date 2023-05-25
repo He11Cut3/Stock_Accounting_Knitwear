@@ -31,13 +31,11 @@ namespace Knitwear.Edit
             _stock = (o as Button).DataContext as Knitwears_Stock;
             _Main = uC_User;
             SStock_Name.Text = _stock.Knitwears_Stock_Name;
-            SStock_Feature.Text = _stock.Knitwears_Stock_Feature;
+            myComboBox3.Text = _stock.Knitwears_Stock_Feature;
             SStock_Weight.Text = _stock.Knitwears_Stock_Weight;
-            SStock_Description.Text = _stock.Knitwears_Stock_Description;
             SStock_Date.Text = _stock.Knitwears_Stock_Date;
-            SStock_Status.Text = _stock.Knitwears_Stock_Status;
+            myComboBox1.Text = _stock.Knitwears_Stock_Status;
             SStock_Date.IsEnabled = false;
-            SStock_Status.IsEnabled = false;
         }
         private void Time_Now_Click(object sender, RoutedEventArgs e)
         {
@@ -63,9 +61,9 @@ namespace Knitwear.Edit
             if ((MessageBox.Show("Вы уверены, что хотите изменить информацию?", "Изменение", MessageBoxButton.YesNo, MessageBoxImage.Warning)) == MessageBoxResult.Yes)
             {
                 _stock.Knitwears_Stock_Name = SStock_Name.Text;
-                _stock.Knitwears_Stock_Feature = SStock_Feature.Text;
+                _stock.Knitwears_Stock_Feature = (myComboBox3.SelectedItem as ComboBoxItem)?.Content?.ToString();
                 _stock.Knitwears_Stock_Weight = SStock_Weight.Text;
-                _stock.Knitwears_Stock_Description = SStock_Description.Text;
+                _stock.Knitwears_Stock_Status = (myComboBox1.SelectedItem as ComboBoxItem)?.Content?.ToString();
                 _context.SaveChanges();
                 _Main.Update_and_Check_Stock();
                 this.Close();

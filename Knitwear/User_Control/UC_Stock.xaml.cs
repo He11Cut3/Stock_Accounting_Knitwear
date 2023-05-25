@@ -81,9 +81,8 @@ namespace Knitwear.User_Control
                     worksheet.Cells[i + 2, 1].Value = data[i].Knitwears_Stock_Name;
                     worksheet.Cells[i + 2, 2].Value = data[i].Knitwears_Stock_Feature;
                     worksheet.Cells[i + 2, 3].Value = data[i].Knitwears_Stock_Weight;
-                    worksheet.Cells[i + 2, 4].Value = data[i].Knitwears_Stock_Description;
-                    worksheet.Cells[i + 2, 5].Value = data[i].Knitwears_Stock_Date;
-                    worksheet.Cells[i + 2, 6].Value = data[i].Knitwears_Stock_Status;
+                    worksheet.Cells[i + 2, 4].Value = data[i].Knitwears_Stock_Date;
+                    worksheet.Cells[i + 2, 5].Value = data[i].Knitwears_Stock_Status;
                 }
 
                 // Сохраняем файл
@@ -92,6 +91,20 @@ namespace Knitwear.User_Control
                 string filePath = System.IO.Path.Combine(desktopPath, "Данные_Склад.xlsx");
                 File.WriteAllBytes(filePath, package.GetAsByteArray());
             }
+        }
+
+        private void Finder_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string searchText = Finder.Text;
+            var query = from emp in _context.Knitwears_Stock
+                        where emp.Knitwears_Stock_Name.Contains(searchText)
+                            || emp.Knitwears_Stock_Date.Contains(searchText)
+                            || emp.Knitwears_Stock_Status.Contains(searchText)
+                            || emp.Knitwears_Stock_Feature.Contains(searchText)
+                            || emp.Knitwears_Stock_Weight.Contains(searchText)
+                        select emp;
+
+            LV_User_.ItemsSource = query.ToList();
         }
     }
 }

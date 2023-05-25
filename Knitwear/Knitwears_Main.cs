@@ -18,13 +18,11 @@ namespace Knitwear
         public Nullable<int> Knitwears_Stock_id { get; set; }
         public Nullable<int> Knitwears_Plan_id { get; set; }
         public Nullable<int> Knitwears_Order_id { get; set; }
-        public Nullable<int> Knitwears_Recipe_id { get; set; }
         public Nullable<int> Knitwears_Product_id { get; set; }
     
         public virtual Knitwears_Order Knitwears_Order { get; set; }
         public virtual Knitwears_Plan_Main Knitwears_Plan_Main { get; set; }
         public virtual Knitwears_Product Knitwears_Product { get; set; }
-        public virtual Knitwears_Recipe Knitwears_Recipe { get; set; }
         public virtual Knitwears_Stock Knitwears_Stock { get; set; }
     }
 }

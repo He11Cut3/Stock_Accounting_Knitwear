@@ -99,6 +99,7 @@
                      CaretBrush="White"
                      BorderBrush="White" />
             <TextBox x:Name="PProduct_Weight"
+                     PreviewKeyDown="PProduct_Weight_PreviewKeyDown"
                      Width="200"
                      Height="35"
                      Margin="45 15 15 15"

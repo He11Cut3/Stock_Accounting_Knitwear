@@ -27,50 +27,7 @@ namespace Knitwear
         public string Knitwears_Product_Description { get; set; }
         public string Knitwears_Product_Date { get; set; }
         public string Knitwears_Product_Status { get; set; }
-
-        public string Name
-        {
-            get
-            {
-                return "Наименование: " + this.Knitwears_Product_Name;
-            }
-        }
-        public string Weight
-        {
-            get
-            {
-                return "Вес (кг/л): " + this.Knitwears_Product_Weight;
-            }
-        }
-        public string Description
-        {
-            get
-            {
-                return "Описание: " + this.Knitwears_Product_Description;
-            }
-        }
-        public string Boxes
-        {
-            get
-            {
-                return "Эталонный образец: " + this.Knitwears_Product_Sample;
-            }
-        }
-        public string Date
-        {
-            get
-            {
-                return "Дата выхода с карантина: " + this.Knitwears_Product_Date;
-            }
-        }
-        public string Status
-        {
-            get
-            {
-                return "Статус: " + this.Knitwears_Product_Status;
-            }
-        }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Knitwears_Main> Knitwears_Main { get; set; }
     }

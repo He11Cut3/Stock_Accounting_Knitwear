@@ -8,7 +8,6 @@
           <ScalarProperty Name="Knitwears_Stock_id" ColumnName="Knitwears_Stock_id" />
           <ScalarProperty Name="Knitwears_Plan_id" ColumnName="Knitwears_Plan_id" />
           <ScalarProperty Name="Knitwears_Order_id" ColumnName="Knitwears_Order_id" />
-          <ScalarProperty Name="Knitwears_Recipe_id" ColumnName="Knitwears_Recipe_id" />
           <ScalarProperty Name="Knitwears_Product_id" ColumnName="Knitwears_Product_id" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -38,6 +37,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Knitwears_Plan_General">
+      <EntityTypeMapping TypeName="KnitwearsModel.Knitwears_Plan_General">
+        <MappingFragment StoreEntitySet="Knitwears_Plan_General">
+          <ScalarProperty Name="Knitwears_Plan_General_id" ColumnName="Knitwears_Plan_General_id" />
+          <ScalarProperty Name="Knitwears_Plan_General_Nomenclature" ColumnName="Knitwears_Plan_General_Nomenclature" />
+          <ScalarProperty Name="Knitwears_Plan_General_Date" ColumnName="Knitwears_Plan_General_Date" />
+          <ScalarProperty Name="Knitwears_Plan_General_Volume" ColumnName="Knitwears_Plan_General_Volume" />
+          <ScalarProperty Name="Knitwears_Plan_General_Note" ColumnName="Knitwears_Plan_General_Note" />
+          <ScalarProperty Name="Knitwears_Plan_General_Status" ColumnName="Knitwears_Plan_General_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Knitwears_Plan_Main">
       <EntityTypeMapping TypeName="KnitwearsModel.Knitwears_Plan_Main">
         <MappingFragment StoreEntitySet="Knitwears_Plan_Main">
@@ -45,6 +56,7 @@
           <ScalarProperty Name="Knitwears_Plan_Day_id" ColumnName="Knitwears_Plan_Day_id" />
           <ScalarProperty Name="Knitwears_Plan_Week_id" ColumnName="Knitwears_Plan_Week_id" />
           <ScalarProperty Name="Knitwears_Plan_Month_id" ColumnName="Knitwears_Plan_Month_id" />
+          <ScalarProperty Name="Knitwears_Plan_General_id" ColumnName="Knitwears_Plan_General_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -85,18 +97,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Knitwears_Recipe">
-      <EntityTypeMapping TypeName="KnitwearsModel.Knitwears_Recipe">
-        <MappingFragment StoreEntitySet="Knitwears_Recipe">
-          <ScalarProperty Name="Knitwears_Recipe_id" ColumnName="Knitwears_Recipe_id" />
-          <ScalarProperty Name="Knitwears_Recipe_Name" ColumnName="Knitwears_Recipe_Name" />
-          <ScalarProperty Name="Knitwears_Recipe_Ingredients_One" ColumnName="Knitwears_Recipe_Ingredients_One" />
-          <ScalarProperty Name="Knitwears_Recipe_Ingredients_Two" ColumnName="Knitwears_Recipe_Ingredients_Two" />
-          <ScalarProperty Name="Knitwears_Recipe_Ingredients_Three" ColumnName="Knitwears_Recipe_Ingredients_Three" />
-          <ScalarProperty Name="Knitwears_Recipe_Ingredients_Four" ColumnName="Knitwears_Recipe_Ingredients_Four" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Knitwears_Stock">
       <EntityTypeMapping TypeName="KnitwearsModel.Knitwears_Stock">
         <MappingFragment StoreEntitySet="Knitwears_Stock">
@@ -104,7 +104,7 @@
           <ScalarProperty Name="Knitwears_Stock_Name" ColumnName="Knitwears_Stock_Name" />
           <ScalarProperty Name="Knitwears_Stock_Feature" ColumnName="Knitwears_Stock_Feature" />
           <ScalarProperty Name="Knitwears_Stock_Weight" ColumnName="Knitwears_Stock_Weight" />
-          <ScalarProperty Name="Knitwears_Stock_Description" ColumnName="Knitwears_Stock_Description" />
+          <ScalarProperty Name="Knitwears_Stock_Image" ColumnName="Knitwears_Stock_Image" />
           <ScalarProperty Name="Knitwears_Stock_Date" ColumnName="Knitwears_Stock_Date" />
           <ScalarProperty Name="Knitwears_Stock_Status" ColumnName="Knitwears_Stock_Status" />
         </MappingFragment>

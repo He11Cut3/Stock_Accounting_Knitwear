@@ -26,46 +26,7 @@ namespace Knitwear
         public string Knitwears_Plan_Month_Volume { get; set; }
         public string Knitwears_Plan_Month_Note { get; set; }
         public string Knitwears_Plan_Month_Status { get; set; }
-
-        public string Nomenclature_month
-        {
-            get
-            {
-                return "Номенклатура: " + this.Knitwears_Plan_Month_Nomenclature;
-            }
-        }
-
-        public string Date_month
-        {
-            get
-            {
-                return "Выполнить до: " + this.Knitwears_Plan_Month_Date;
-            }
-        }
-
-        public string Status_month
-        {
-            get
-            {
-                return "Статус выполнения: " + this.Knitwears_Plan_Month_Status;
-            }
-        }
-
-        public string Volume_month
-        {
-            get
-            {
-                return "Обьем: " + this.Knitwears_Plan_Month_Volume;
-            }
-        }
-        public string Note_month
-        {
-            get
-            {
-                return "Примечание: " + this.Knitwears_Plan_Month_Note;
-            }
-        }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Knitwears_Plan_Main> Knitwears_Plan_Main { get; set; }
     }

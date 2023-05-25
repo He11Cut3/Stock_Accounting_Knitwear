@@ -24,10 +24,12 @@ namespace Knitwear
         public Nullable<int> Knitwears_Plan_Day_id { get; set; }
         public Nullable<int> Knitwears_Plan_Week_id { get; set; }
         public Nullable<int> Knitwears_Plan_Month_id { get; set; }
+        public Nullable<int> Knitwears_Plan_General_id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Knitwears_Main> Knitwears_Main { get; set; }
         public virtual Knitwears_Plan_Day Knitwears_Plan_Day { get; set; }
+        public virtual Knitwears_Plan_General Knitwears_Plan_General { get; set; }
         public virtual Knitwears_Plan_Month Knitwears_Plan_Month { get; set; }
         public virtual Knitwears_Plan_Week Knitwears_Plan_Week { get; set; }
     }

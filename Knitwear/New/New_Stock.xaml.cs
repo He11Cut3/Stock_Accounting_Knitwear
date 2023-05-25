@@ -1,6 +1,7 @@
 ﻿using Knitwear.User_Control;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,8 +29,6 @@ namespace Knitwear.New
             InitializeComponent();
             this._context = analytic_DbEntities1;
             this._uc = uC_User;
-            SStock_Status.IsEnabled = false;
-            SStock_Status.Text = "В процессе обработки";
             SStock_Date.IsEnabled = false;
             string time_2_week = DateTime.Now.ToString("dd.MM.yyyy");
             SStock_Date.Text = time_2_week;
@@ -47,20 +46,27 @@ namespace Knitwear.New
 
         private void Stock_Click(object sender, RoutedEventArgs e)
         {
-            if ((MessageBox.Show("Вы уверены, что хотите добавить информацию?", "Добавление", MessageBoxButton.YesNo, MessageBoxImage.Warning)) == MessageBoxResult.Yes)
+            var openFileDialog = new Microsoft.Win32.OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.png;*.jpeg;*.jpg;*.gif;*.bmp)|*.png;*.jpeg;*.jpg;*.gif;*.bmp";
+            if (openFileDialog.ShowDialog() == true)
             {
-                _context.Knitwears_Stock.Add(new Knitwears_Stock()
+                string filePath = openFileDialog.FileName;
+                byte[] imageBytes = File.ReadAllBytes(filePath);
+                if ((System.Windows.MessageBox.Show("Вы уверены, что хотите добавить информацию?", "Добавление", MessageBoxButton.YesNo, MessageBoxImage.Warning)) == MessageBoxResult.Yes)
                 {
+                    _context.Knitwears_Stock.Add(new Knitwears_Stock()
+                {
+                    Knitwears_Stock_Image = imageBytes,
                     Knitwears_Stock_Name = SStock_Name.Text,
-                    Knitwears_Stock_Feature = SStock_Feature.Text,
-                    Knitwears_Stock_Weight = SStock_Weight.Text,
-                    Knitwears_Stock_Description = SStock_Description.Text,
+                    Knitwears_Stock_Feature = (myComboBox3.SelectedItem as ComboBoxItem)?.Content?.ToString(),
+                    Knitwears_Stock_Weight =  SStock_Weight.Text + " " + (myComboBox.SelectedItem as ComboBoxItem)?.Content?.ToString(),
                     Knitwears_Stock_Date = SStock_Date.Text,
-                    Knitwears_Stock_Status = SStock_Status.Text,
+                    Knitwears_Stock_Status = (myComboBox1.SelectedItem as ComboBoxItem)?.Content?.ToString(),
                 });
                 _context.SaveChanges();
                 _uc.Update_and_Check_Stock();
                 this.Close();
+                }
             }
         }
     }

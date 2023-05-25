@@ -23,16 +23,18 @@ namespace Knitwear.Edit
         private KnitwearsEntities _context;
         private UC_Plan_Week uC_Plan_Week;
         private Knitwears_Plan_Week _Plan_Week;
+        private UC_Plan_General _General;
 
-        public Edit_Del_Week(KnitwearsEntities analytic_DbEntities1, object o, UC_Plan_Week uC_Plan)
+        public Edit_Del_Week(KnitwearsEntities analytic_DbEntities1, object o, UC_Plan_Week uC_Plan, UC_Plan_General plan_General)
         {
             InitializeComponent();
             _context = analytic_DbEntities1;
             _Plan_Week = (o as Button).DataContext as Knitwears_Plan_Week;
             uC_Plan_Week = uC_Plan;
-            WWeek_Nomenclature.Text = _Plan_Week.Knitwears_Plan_Week_Nomenclature;
-            WWeek_Note.Text = _Plan_Week.Knitwears_Plan_Week_Note;
-            WWeek_Volume.Text = _Plan_Week.Knitwears_Plan_Week_Volume;
+            _General = plan_General;
+            Nomen.Text = _Plan_Week.Knitwears_Plan_Week_Nomenclature;
+            Note.Text = _Plan_Week.Knitwears_Plan_Week_Note;
+            myComboBox1.Text = _Plan_Week.Knitwears_Plan_Week_Volume;
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -49,7 +51,14 @@ namespace Knitwear.Edit
         {
             _Plan_Week.Knitwears_Plan_Week_Status = "Задача выполнена ✓";
             _context.SaveChanges();
-            uC_Plan_Week.Update_and_Check_Week();
+            if (uC_Plan_Week != null)
+            {
+                uC_Plan_Week.Update_and_Check_Week();
+            }
+            if (_General != null)
+            {
+                _General.Update_and_Check_Week_Gen();
+            }
             this.Close();
         }
 
@@ -57,11 +66,18 @@ namespace Knitwear.Edit
         {
             if ((MessageBox.Show("Вы уверены, что хотите изменить информацию?", "Изменение", MessageBoxButton.YesNo, MessageBoxImage.Warning)) == MessageBoxResult.Yes)
             {
-                _Plan_Week.Knitwears_Plan_Week_Nomenclature = WWeek_Nomenclature.Text;
-                _Plan_Week.Knitwears_Plan_Week_Note = WWeek_Note.Text;
-                _Plan_Week.Knitwears_Plan_Week_Volume = WWeek_Volume.Text;
+                _Plan_Week.Knitwears_Plan_Week_Nomenclature = Nomen.Text;
+                _Plan_Week.Knitwears_Plan_Week_Note = Note.Text;
+                _Plan_Week.Knitwears_Plan_Week_Volume = (myComboBox1.SelectedItem as ComboBoxItem)?.Content?.ToString();
                 _context.SaveChanges();
-                uC_Plan_Week.Update_and_Check_Week();
+                if (uC_Plan_Week != null)
+                {
+                    uC_Plan_Week.Update_and_Check_Week();
+                }
+                if (_General != null)
+                {
+                    _General.Update_and_Check_Week_Gen();
+                }
                 this.Close();
             }
         }
@@ -72,7 +88,14 @@ namespace Knitwear.Edit
             {
                 _context.Knitwears_Plan_Week.Remove(_Plan_Week);
                 _context.SaveChanges();
-                uC_Plan_Week.Update_and_Check_Week();
+                if (uC_Plan_Week != null)
+                {
+                    uC_Plan_Week.Update_and_Check_Week();
+                }
+                if (_General != null)
+                {
+                    _General.Update_and_Check_Week_Gen();
+                }
                 this.Close();
             }
         }

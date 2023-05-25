@@ -30,11 +30,11 @@ namespace Knitwear
         public virtual DbSet<Knitwears_Main> Knitwears_Main { get; set; }
         public virtual DbSet<Knitwears_Order> Knitwears_Order { get; set; }
         public virtual DbSet<Knitwears_Plan_Day> Knitwears_Plan_Day { get; set; }
+        public virtual DbSet<Knitwears_Plan_General> Knitwears_Plan_General { get; set; }
         public virtual DbSet<Knitwears_Plan_Main> Knitwears_Plan_Main { get; set; }
         public virtual DbSet<Knitwears_Plan_Month> Knitwears_Plan_Month { get; set; }
         public virtual DbSet<Knitwears_Plan_Week> Knitwears_Plan_Week { get; set; }
         public virtual DbSet<Knitwears_Product> Knitwears_Product { get; set; }
-        public virtual DbSet<Knitwears_Recipe> Knitwears_Recipe { get; set; }
         public virtual DbSet<Knitwears_Stock> Knitwears_Stock { get; set; }
         public virtual DbSet<Knitwears_User> Knitwears_User { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }

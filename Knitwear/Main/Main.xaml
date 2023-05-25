@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="Knitwear"
         Height="730"
-        Width="1280"
+        Width="1480"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         AllowsTransparency="True"
@@ -138,6 +138,20 @@
                     </StackPanel>
                 </RadioButton>
 
+                <RadioButton x:Name="General"
+                             Margin="3,0,0,0"
+                             Style="{StaticResource menuButton}"
+                             Tag="{StaticResource color2}"
+                             Command="{Binding ShowCustomerViewCommand}"
+                             Checked="General_Checked">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="Calendar"
+                                      Style="{StaticResource menuButtonIcon}" />
+                        <TextBlock Text="План (Общий)"
+                                   Style="{StaticResource menuButtonText}" />
+                    </StackPanel>
+                </RadioButton>
+
                 <RadioButton x:Name="Day"
                              Margin="3,0,0,0"
                              Style="{StaticResource menuButton}"
@@ -200,59 +214,8 @@
                         <fa:IconImage Icon="BorderAll"
                                       Style="{StaticResource menuButtonIcon}" />
                         <TextBlock TextWrapping="Wrap"
-                                   Style="{StaticResource menuButtonText}" Text="Продукция"/>
-                    </StackPanel>
-                </RadioButton>
-                <RadioButton PreviewMouseDoubleClick="RadioButton_PreviewMouseDoubleClick_1"
-                             Style="{StaticResource menuButton}"
-                             Tag="{StaticResource color3}"
-                             Command="{Binding ShowCustomerViewCommand}"
-                             Checked="RadioButton_Checked_7">
-                    <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="Accusoft"
-                                      Style="{StaticResource menuButtonIcon}" />
-                        <TextBlock Text="Отчет"
-                                   Style="{StaticResource menuButtonText}" />
-                    </StackPanel>
-                </RadioButton>
-                <RadioButton x:Name="Stock"
-                             Margin="3,0,0,0"
-                             Style="{StaticResource menuButton}"
-                             Tag="{StaticResource color3}"
-                             Command="{Binding ShowCustomerViewCommand}"
-                             Checked="Stock_Checked">
-                    <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="Accusoft"
-                                      Style="{StaticResource menuButtonIcon}" />
-                        <TextBlock Text="Отчет (Сырье)"
-                                   Style="{StaticResource menuButtonText}" />
-                    </StackPanel>
-                </RadioButton>
-
-                <RadioButton x:Name="Order"
-                             Margin="3,0,0,0"
-                             Style="{StaticResource menuButton}"
-                             Tag="{StaticResource color3}"
-                             Command="{Binding ShowCustomerViewCommand}"
-                             Checked="Order_Checked">
-                    <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="Accusoft"
-                                      Style="{StaticResource menuButtonIcon}" />
-                        <TextBlock Text="Отчет (Заказ)"
-                                   Style="{StaticResource menuButtonText}" />
-                    </StackPanel>
-                </RadioButton>
-                <RadioButton x:Name="Product"
-                             Margin="3,0,0,0"
-                             Style="{StaticResource menuButton}"
-                             Tag="{StaticResource color3}"
-                             Command="{Binding ShowCustomerViewCommand}"
-                             Checked="Product_Checked">
-                    <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="Accusoft"
-                                      Style="{StaticResource menuButtonIcon}" />
-                        <TextBlock Text="Отчет (Продукция)"
-                                   Style="{StaticResource menuButtonText}" />
+                                   Style="{StaticResource menuButtonText}"
+                                   Text="Продукция" />
                     </StackPanel>
                 </RadioButton>
             </StackPanel>
@@ -285,6 +248,10 @@
               Grid.Column="1"
               Margin="0,0,20,20" />
         <Grid x:Name="LV_Recipe"
+              Grid.Row="1"
+              Grid.Column="1"
+              Margin="0,0,20,20" />
+        <Grid x:Name="LV_Plan_General"
               Grid.Row="1"
               Grid.Column="1"
               Margin="0,0,20,20" />

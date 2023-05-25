@@ -19,13 +19,6 @@
         <StackPanel Orientation="Horizontal"
                     Grid.Row="0"
                     Grid.Column="1">
-            <Button x:Name="New_Plan_Day"
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    Content="Добавить план (День)"
-                    HorizontalAlignment="Right"
-                    Margin="10,10,10,10"
-                    Click="New_Plan_Click" />
             <Button x:Name="Ex_Plan_Day"
                     Grid.Row="0"
                     Grid.Column="1"
@@ -33,6 +26,22 @@
                     HorizontalAlignment="Right"
                     Margin="10,10,10,10"
                     Click="Ex_Order_Click" />
+            <TextBlock Text="Поиск:"
+                       Style="{StaticResource uc_ButtonText}"
+                       Height="17" />
+            <TextBox x:Name="Finder"
+                     Width="200"
+                     Height="35"
+                     Margin="5 5 5 5"
+                     HorizontalAlignment="Left"
+                     FontFamily="Montserrat"
+                     FontWeight="Medium"
+                     FontSize="16"
+                     Foreground="White"
+                     SelectionBrush="Red"
+                     CaretBrush="White"
+                     BorderBrush="White"
+                     TextChanged="Finder_TextChanged" />
 
         </StackPanel>
         <Border Grid.Row="1"
@@ -89,15 +98,29 @@
                                                HorizontalAlignment="Left"
                                                VerticalAlignment="Center"
                                                Grid.Column="0">
-                                        <TextBlock Text="{Binding Nomenclature}"
+                                        <TextBlock Text="{Binding Knitwears_Plan_Day_Nomenclature,
+                                                       StringFormat='Номер документа: {0}'}"
                                                    Style="{StaticResource uc_ButtonText}" />
-                                        <TextBlock Text="{Binding Volume}"
+
+
+                                        <TextBlock Text="{Binding Knitwears_Plan_Day_Date,
+                                                       StringFormat='Дата: {0}'}"
                                                    Style="{StaticResource uc_ButtonText}" />
-                                        <TextBlock Text="{Binding Note}"
+
+
+
+                                        <TextBlock Text="{Binding Knitwears_Plan_Day_Volume,
+                                                       StringFormat='Объём работ: {0}'}"
                                                    Style="{StaticResource uc_ButtonText}" />
-                                        <TextBlock Text="{Binding Date}"
+
+
+                                        <TextBlock Text="{Binding Knitwears_Plan_Day_Note,
+                                                       StringFormat='Примечание: {0}'}"
                                                    Style="{StaticResource uc_ButtonText}" />
-                                        <TextBlock Text="{Binding Status}"
+
+
+                                        <TextBlock Text="{Binding Knitwears_Plan_Day_Status,
+                                                       StringFormat='Статус: {0}'}"
                                                    Style="{StaticResource uc_ButtonText}" />
                                     </WrapPanel>
                                     <Button x:Name="Edit_del"
@@ -105,7 +128,7 @@
                                             Grid.Column="1"
                                             Content="Опции"
                                             HorizontalAlignment="Right"
-                                            Margin="10,-5,20,10"
+                                            Margin="10,-5,5,10"
                                             Click="Edit_del_Click" />
                                 </StackPanel>
                             </Grid>
@@ -113,6 +136,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            
         </Border>
     </Grid>
 </UserControl>

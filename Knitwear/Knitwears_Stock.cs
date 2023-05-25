@@ -24,53 +24,10 @@ namespace Knitwear
         public string Knitwears_Stock_Name { get; set; }
         public string Knitwears_Stock_Feature { get; set; }
         public string Knitwears_Stock_Weight { get; set; }
-        public string Knitwears_Stock_Description { get; set; }
+        public byte[] Knitwears_Stock_Image { get; set; }
         public string Knitwears_Stock_Date { get; set; }
         public string Knitwears_Stock_Status { get; set; }
-
-        public string Name
-        {
-            get
-            {
-                return "Наименование: " + this.Knitwears_Stock_Name;
-            }
-        }
-        public string Feature
-        {
-            get
-            {
-                return "Характеристики: " + this.Knitwears_Stock_Feature;
-            }
-        }
-        public string Weight
-        {
-            get
-            {
-                return "Вес: " + this.Knitwears_Stock_Weight;
-            }
-        }
-        public string Description
-        {
-            get
-            {
-                return "Описание: " + this.Knitwears_Stock_Description;
-            }
-        }
-        public string Date
-        {
-            get
-            {
-                return "Дата создания записи: " + this.Knitwears_Stock_Date;
-            }
-        }
-        public string Status
-        {
-            get
-            {
-                return "Статус: " + this.Knitwears_Stock_Status;
-            }
-        }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Knitwears_Main> Knitwears_Main { get; set; }
     }

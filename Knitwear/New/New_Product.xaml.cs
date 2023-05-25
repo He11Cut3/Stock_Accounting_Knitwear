@@ -36,6 +36,7 @@ namespace Knitwear.New
             PProduct_Date.Text = time_now;
             PProduct_Boxes.Text = "В ожидании";
         }
+
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -64,6 +65,14 @@ namespace Knitwear.New
                 _uc.Update_and_Check_Product();
 
                 this.Close();
+            }
+        }
+
+        private void PProduct_Weight_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (!((e.Key >= Key.D0 && e.Key <= Key.D9) || (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9) || e.Key == Key.Back))
+            {
+                e.Handled = true;
             }
         }
     }

@@ -33,6 +33,22 @@
                     HorizontalAlignment="Right"
                     Margin="10,10,10,10"
                     Click="Ex_Stock_Click" />
+            <TextBlock Text="Поиск:"
+                       Style="{StaticResource uc_ButtonText}"
+                       Height="17" />
+            <TextBox x:Name="Finder"
+                     Width="200"
+                     Height="35"
+                     Margin="5 5 5 5"
+                     HorizontalAlignment="Left"
+                     FontFamily="Montserrat"
+                     FontWeight="Medium"
+                     FontSize="16"
+                     Foreground="White"
+                     SelectionBrush="Red"
+                     CaretBrush="White"
+                     BorderBrush="White"
+                     TextChanged="Finder_TextChanged" />
         </StackPanel>
         <Border Background="Transparent"
                 Grid.Row="1"
@@ -89,17 +105,32 @@
                                                HorizontalAlignment="Left"
                                                VerticalAlignment="Center"
                                                Grid.Column="0">
-                                        <TextBlock Text="{Binding Name}"
+                                        <Image Source="{Binding Knitwears_Stock_Image}"
+                                               Width="200"
+                                               Height="150" />
+                                        <TextBlock Text="{Binding Knitwears_Stock_Name,
+                                                       StringFormat='Наименование: {0}'}"
                                                    Style="{StaticResource uc_ButtonText}" />
-                                        <TextBlock Text="{Binding Feature}"
+                                        
+                                        
+                                        <TextBlock Text="{Binding Knitwears_Stock_Feature,
+                                                       StringFormat='Характеристики: {0}'}"
                                                    Style="{StaticResource uc_ButtonText}" />
-                                        <TextBlock Text="{Binding Weight}"
+                                       
+                                        
+                                        <TextBlock Text="{Binding Knitwears_Stock_Weight,
+                                                       StringFormat='Вес: {0}'}"
                                                    Style="{StaticResource uc_ButtonText}" />
-                                        <TextBlock Text="{Binding Description}"
+                                        
+                                        
+                                        
+                                        <TextBlock Text="{Binding Knitwears_Stock_Date,
+                                                       StringFormat='Дата добавления: {0}'}"
                                                    Style="{StaticResource uc_ButtonText}" />
-                                        <TextBlock Text="{Binding Date}"
-                                                   Style="{StaticResource uc_ButtonText}" />
-                                        <TextBlock Text="{Binding Status}"
+                                        
+                                        
+                                        <TextBlock Text="{Binding Knitwears_Stock_Status,
+                                                       StringFormat='Статус: {0}'}"
                                                    Style="{StaticResource uc_ButtonText}" />
                                     </WrapPanel>
                                     <Button x:Name="Edit_del"

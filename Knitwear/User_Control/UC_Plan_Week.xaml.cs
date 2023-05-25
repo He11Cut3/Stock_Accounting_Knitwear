@@ -27,11 +27,25 @@ namespace Knitwear.User_Control
         KnitwearsEntities _context = new KnitwearsEntities();
         List<Knitwears_Plan_Week> _list = new List<Knitwears_Plan_Week>();
         private Knitwears_Plan_Week _plan;
+        private UC_Plan_General _general;
 
         public UC_Plan_Week()
         {
             InitializeComponent();
             Update_and_Check_Week();
+        }
+
+        private void Finder_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string searchText = Finder.Text;
+            var query2 = from emp in _context.Knitwears_Plan_Week
+                         where emp.Knitwears_Plan_Week_Note.Contains(searchText)
+                             || emp.Knitwears_Plan_Week_Nomenclature.Contains(searchText)
+                             || emp.Knitwears_Plan_Week_Status.Contains(searchText)
+                             || emp.Knitwears_Plan_Week_Date.Contains(searchText)
+                         select emp;
+
+            LV_Plan_Week_.ItemsSource = query2.ToList();
         }
 
         public void Update_and_Check_Week()
@@ -53,15 +67,9 @@ namespace Knitwear.User_Control
         }
 
 
-        private void New_Plan_Week_Click(object sender, RoutedEventArgs e)
-        {
-            New_Week new_plan_week = new New_Week(_context, this);
-            new_plan_week.ShowDialog();
-        }
-
         private void Edit_Del_Week_Click(object sender, RoutedEventArgs e)
         {
-            Edit_Del_Week edit_Del_Week = new Edit_Del_Week(_context, sender, this);
+            Edit_Del_Week edit_Del_Week = new Edit_Del_Week(_context, sender, this, _general);
             edit_Del_Week.ShowDialog();
         }
 

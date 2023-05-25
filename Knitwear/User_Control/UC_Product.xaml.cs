@@ -33,6 +33,22 @@ namespace Knitwear.User_Control
             Update_and_Check_Product();
         }
 
+        private void Finder_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string searchText = Finder.Text;
+            var query3 = from emp in _context.Knitwears_Product
+                         where emp.Knitwears_Product_Name.Contains(searchText)
+                             || emp.Knitwears_Product_Weight.Contains(searchText)
+                             || emp.Knitwears_Product_Sample.Contains(searchText)
+                             || emp.Knitwears_Product_Description.Contains(searchText)
+                             || emp.Knitwears_Product_Date.Contains(searchText)
+                             || emp.Knitwears_Product_Status.Contains(searchText)
+                         select emp;
+
+            LV_Product_.ItemsSource = query3.ToList();
+        }
+
+
         public void Update_and_Check_Product()
         {
             string time_now = DateTime.Now.ToString("dd.MM.yyyy");

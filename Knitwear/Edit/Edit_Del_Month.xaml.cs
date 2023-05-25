@@ -23,16 +23,18 @@ namespace Knitwear.Edit
         private KnitwearsEntities _context;
         private UC_Plan_Month uC_Plan_Monthh;
         private Knitwears_Plan_Month _Plan_Month;
+        private UC_Plan_General _General;
 
-        public Edit_Del_Month(KnitwearsEntities analytic_DbEntities1, object o, UC_Plan_Month uC_Plan_Month)
+        public Edit_Del_Month(KnitwearsEntities analytic_DbEntities1, object o, UC_Plan_Month uC_Plan_Month, UC_Plan_General general)
         {
             InitializeComponent();
             _context = analytic_DbEntities1;
             _Plan_Month = (o as Button).DataContext as Knitwears_Plan_Month;
             uC_Plan_Monthh = uC_Plan_Month;
-            MMonth_Nomenclature.Text = _Plan_Month.Knitwears_Plan_Month_Nomenclature;
-            MMonth_Note.Text = _Plan_Month.Knitwears_Plan_Month_Note;
-            MMonth_Volume.Text = _Plan_Month.Knitwears_Plan_Month_Volume;
+            Nomen.Text = _Plan_Month.Knitwears_Plan_Month_Nomenclature;
+            Note.Text = _Plan_Month.Knitwears_Plan_Month_Note;
+            myComboBox1.Text = _Plan_Month.Knitwears_Plan_Month_Volume;
+            _General = general;
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -50,11 +52,18 @@ namespace Knitwear.Edit
         {
             if ((MessageBox.Show("Вы уверены, что хотите изменить информацию?", "Изменение", MessageBoxButton.YesNo, MessageBoxImage.Warning)) == MessageBoxResult.Yes)
             {
-                _Plan_Month.Knitwears_Plan_Month_Nomenclature = MMonth_Nomenclature.Text;
-                _Plan_Month.Knitwears_Plan_Month_Note = MMonth_Note.Text;
-                _Plan_Month.Knitwears_Plan_Month_Volume = MMonth_Volume.Text;
+                _Plan_Month.Knitwears_Plan_Month_Nomenclature = Nomen.Text;
+                _Plan_Month.Knitwears_Plan_Month_Note = Note.Text;
+                _Plan_Month.Knitwears_Plan_Month_Volume = (myComboBox1.SelectedItem as ComboBoxItem)?.Content?.ToString();
                 _context.SaveChanges();
-                uC_Plan_Monthh.Update_and_Check_Month();
+                if (uC_Plan_Monthh != null)
+                {
+                    uC_Plan_Monthh.Update_and_Check_Month();
+                }
+                if (_General != null)
+                {
+                    _General.Update_and_Check_Month_Gen();
+                }
                 this.Close();
             }
         }
@@ -63,7 +72,14 @@ namespace Knitwear.Edit
         {
             _Plan_Month.Knitwears_Plan_Month_Status = "Задача выполнена ✓";
             _context.SaveChanges();
-            uC_Plan_Monthh.Update_and_Check_Month();
+            if (uC_Plan_Monthh != null)
+            {
+                uC_Plan_Monthh.Update_and_Check_Month();
+            }
+            if (_General != null)
+            {
+                _General.Update_and_Check_Month_Gen();
+            }
             this.Close();
         }
 
@@ -73,7 +89,14 @@ namespace Knitwear.Edit
             {
                 _context.Knitwears_Plan_Month.Remove(_Plan_Month);
                 _context.SaveChanges();
-                uC_Plan_Monthh.Update_and_Check_Month();
+                if (uC_Plan_Monthh != null)
+                {
+                    uC_Plan_Monthh.Update_and_Check_Month();
+                }
+                if (_General != null)
+                {
+                    _General.Update_and_Check_Month_Gen();
+                }
                 this.Close();
             }
         }

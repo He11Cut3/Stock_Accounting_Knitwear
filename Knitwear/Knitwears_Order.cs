@@ -27,50 +27,7 @@ namespace Knitwear
         public string Knitwears_Order_Number_Boxes { get; set; }
         public string Knitwears_Order_Date { get; set; }
         public string Knitwears_Order_Status { get; set; }
-
-        public string Name
-        {
-            get
-            {
-                return "Заказ: " + this.Knitwears_Order_Name;
-            }
-        }
-        public string Code
-        {
-            get
-            {
-                return "Код заказа: " + this.Knitwears_Order_Vendor_Code;
-            }
-        }
-        public string Weight
-        {
-            get
-            {
-                return "Вес: " + this.Knitwears_Order_Weight;
-            }
-        }
-        public string Boxes
-        {
-            get
-            {
-                return "Содержимое коробок: " + this.Knitwears_Order_Number_Boxes;
-            }
-        }
-        public string Date
-        {
-            get
-            {
-                return "Заказ на: " + this.Knitwears_Order_Date;
-            }
-        }
-        public string Status
-        {
-            get
-            {
-                return "Статус: " + this.Knitwears_Order_Status;
-            }
-        }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Knitwears_Main> Knitwears_Main { get; set; }
     }

@@ -88,3 +88,8 @@ C:\Users\Руслан-ПК\Desktop\Knitwear\Knitwear\bin\Debug\EPPlus.System.Dra
 C:\Users\Руслан-ПК\Desktop\Knitwear\Knitwear\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
 C:\Users\Руслан-ПК\Desktop\Knitwear\Knitwear\bin\Debug\EPPlus.xml
 C:\Users\Руслан-ПК\Desktop\Knitwear\Knitwear\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\Руслан-ПК\Desktop\Knitwear\Knitwear\obj\Debug\Knitwear.csproj.SuggestedBindingRedirects.cache
+C:\Users\Руслан-ПК\Desktop\Knitwear\Knitwear\obj\Debug\User_Control\UC_Plan_General.g.cs
+C:\Users\Руслан-ПК\Desktop\Knitwear\Knitwear\obj\Debug\User_Control\UC_Plan_General.baml
+C:\Users\Руслан-ПК\Desktop\Knitwear\Knitwear\obj\Debug\New\New_General.g.cs
+C:\Users\Руслан-ПК\Desktop\Knitwear\Knitwear\obj\Debug\New\New_General.baml

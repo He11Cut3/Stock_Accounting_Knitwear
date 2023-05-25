@@ -41,6 +41,21 @@ namespace Knitwear.User_Control
 
         }
 
+        private void Finder_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string searchText = Finder.Text;
+            var query3 = from emp in _context.Knitwears_Order
+                         where emp.Knitwears_Order_Name.Contains(searchText)
+                             || emp.Knitwears_Order_Vendor_Code.Contains(searchText)
+                             || emp.Knitwears_Order_Weight.Contains(searchText)
+                             || emp.Knitwears_Order_Number_Boxes.Contains(searchText)
+                             || emp.Knitwears_Order_Date.Contains(searchText)
+                             || emp.Knitwears_Order_Status.Contains(searchText)
+                         select emp;
+
+            LV_Order_.ItemsSource = query3.ToList();
+        }
+
         private void New_Order_Click(object sender, RoutedEventArgs e)
         {
             New_Order new_Order = new New_Order(_context, this);

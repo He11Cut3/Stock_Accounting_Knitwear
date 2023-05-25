@@ -83,7 +83,7 @@
         <StackPanel Grid.Row="1"
                     Grid.Column="1"
                     Grid.RowSpan="2">
-            <TextBox x:Name="DDay_Nomenclature"
+            <TextBox x:Name="Nomen"
                      Width="200"
                      Height="35"
                      Margin="45 15 15 15"
@@ -95,19 +95,26 @@
                      SelectionBrush="Red"
                      CaretBrush="White"
                      BorderBrush="White" />
-            <TextBox x:Name="DDay_Volume"
-                     Width="200"
-                     Height="35"
-                     Margin="45 15 15 15"
-                     HorizontalAlignment="Left"
-                     FontFamily="Montserrat"
-                     FontWeight="Medium"
-                     FontSize="16"
-                     Foreground="White"
-                     SelectionBrush="Red"
-                     CaretBrush="White"
-                     BorderBrush="White" />
-            <TextBox x:Name="DDay_Note"
+            <ComboBox Width="200"
+                      Height="35"
+                      Margin="45 15 15 15"
+                      HorizontalAlignment="Left"
+                      FontFamily="Montserrat"
+                      FontWeight="Medium"
+                      FontSize="16"
+                      Foreground="White"
+                      BorderBrush="White"
+                      x:Name="myComboBox1">
+                <ComboBoxItem Background="#1C0E49">Проектирование</ComboBoxItem>
+                <ComboBoxItem Background="#1C0E49">Литейное производство</ComboBoxItem>
+                <ComboBoxItem Background="#1C0E49">Обработка материалов</ComboBoxItem>
+                <ComboBoxItem Background="#1C0E49">Сборка</ComboBoxItem>
+                <ComboBoxItem Background="#1C0E49">Сварка и монтаж</ComboBoxItem>
+                <ComboBoxItem Background="#1C0E49">Контроль качества</ComboBoxItem>
+                <ComboBoxItem Background="#1C0E49">Ремонт и обслуживание</ComboBoxItem>
+                <ComboBoxItem Background="#1C0E49">Испытания и сертификация</ComboBoxItem>
+            </ComboBox>
+            <TextBox x:Name="Note"
                      Width="200"
                      Height="35"
                      Margin="45 15 15 15"
@@ -123,12 +130,13 @@
         <StackPanel Grid.Row="1"
                     Grid.Column="0"
                     Grid.RowSpan="2">
-            <TextBlock Text="Номенклатура (День)"
+            <TextBlock Text="Номер документа"
                        Style="{StaticResource text_ButtonText}" />
-            <TextBlock Text="Обьём (День)"
+            <TextBlock Text="Вид работ"
                        Style="{StaticResource text_ButtonText}" />
-            <TextBlock Text="Примечания (День)"
+            <TextBlock Text="Примечания"
                        Style="{StaticResource text_ButtonText}" />
+
         </StackPanel>
         <Grid x:Name="LV_User_Grid"
               Grid.Row="1"
